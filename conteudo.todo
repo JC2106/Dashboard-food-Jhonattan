@@ -1,0 +1,8 @@
+# Conteúdo 23/06
+
+Project:
+ ☐ Refatorar main.js para que fique funcional
+ ☐ Pegar o item escolhido
+ ☐ Adicionar o item escolhido no LocalStorage
+ ☐ Listar os itens que estão no LocalStorage
+ ☐ Refatorar o código de main.js

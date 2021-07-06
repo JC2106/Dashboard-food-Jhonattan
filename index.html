@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Food</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <header class="navigation">
+      <div class="menu-lateral-img">
+         <img src="assets/icons/hamburger.png" alt="" height="45">  
+      </div>
+      <div class="menu-lateral-body">
+        <a class="menu-lateral-item" href="./index.html">
+            <span>Venda</span>
+            <img src="assets/icons/shopping-cart.png" alt="" height="24">
+        </a>
+        <a class="menu-lateral-item" href="./produtos.html">
+            <span>Produtos</span>
+            <img src="assets/icons/fast-food.png" alt="" height="24">
+        </a>
+        <a class="menu-lateral-item" href="./config.html">
+            <span>Configuraçao</span>
+            <img src="assets/icons/setting.png" alt="" height="24">
+        </a>
+      </div>    
+    </header>
+
+    <main class="menu">
+      <div class="menu-container">
+        <div class="menu-header">
+          <h1 class="menu-header-title">Menu <span class="font-ligth">Categoria</span></h1>
+          <ul class="menu-itens">
+
+            <li class="category-all">
+              <a class="item-menu" href="#">
+                <div class="item-img">
+                  <img src="assets/icons/cardapio-do-restaurante.png" alt="" height="25">
+                </div>
+                <span class="item-title">Todos</span>
+              </a>
+            </li>
+
+            <li class="category-burguer">
+              <a class="item-menu" href="#">
+                <div class="item-img">
+                  <img src="assets/icons/010-burger.svg" alt="">
+                </div>
+                <span class="item-title">Burger</span>
+              </a>
+            </li>
+
+            <li class="category-pizza">
+              <a class="item-menu" href="#">
+                <div class="item-img">
+                  <img src="assets/icons/023-pizza-slice.svg" alt="">
+                </div>
+                <span class="item-title">Pizza</span>
+              </a>
+            </li>
+
+            <li class="category-taco">
+              <a class="item-menu" href="#">
+                <div class="item-img">
+                  <img src="assets/icons/035-taco.svg" alt="">
+                </div>
+                <span class="item-title">Taco</span>
+              </a>
+            </li>
+
+            <li class="category-batata">
+              <a class="item-menu" href="#">
+                <div class="item-img">
+                  <img src="assets/icons/008-fried-potatoes.svg" alt="">
+                </div>
+                <span class="item-title">Batata frita</span>
+              </a>
+            </li>
+
+            <li class="category-hotdog">
+              <a class="item-menu" href="#">
+                <div class="item-img">
+                  <img src="assets/icons/015-hot-dog-11.svg" alt="">
+                </div>
+                <span class="item-title">Hotdog</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        <section class="menu-content">
+          <h2 class="content-title">Cardapio</h2>
+
+          <div id="modal">
+            <span style="display: none" id="modal-itemId"></span>
+            <div class="modal-item">
+                <div class="modal-item-header">
+                    <h3 class="modal-item-nome"></h3>
+                    <button id="btn-modal"><img src="assets/icons/cancel.png" alt="" height="25"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-header-item">
+                        <img src="assets/images/burger1.png" alt="" id="modal-img">
+                        <h1 class="modal-item-nome"></h1>
+                    </div>
+                    <span id="modal-item-categoria"></span><br>
+                    <span id="modal-item-preco"></span>
+                </div>
+                <div class="modal-bottom">
+                     <button id="btn-modal-bottom">
+                         Confirmar
+                         <img src="assets/icons/right-arrow.png" alt="" height="16" class="btn-modal-bottom-icon">
+                    </button>
+                </div>
+            </div>
+          </div>
+            
+         <div id="modalEdit">
+            <span style="display: none" id="modal-edit-itemId"></span>
+            <div class="modal-item-edit">
+                <div class="modal-item-header">
+                    <h3>Editar item</h3>
+                    <button id="btn-modal-edit"><img src="assets/icons/cancel.png" alt="" height="25"></button>
+                </div>
+                <div class="modal-edit-body">
+                    <div class="modal-header-item">
+                        <img src="assets/images/burger1.png" alt="" id="modal-edit-img">
+                        <h1 id="modal-edit-item-nome"></h1>
+                    </div>
+                    <span id="modal-edit-item-categoria"></span><br>
+                    <span id="modal-edit-item-preco"></span>
+                    <div class="modal-edit-inputs">
+                         <div class="edit-container-quantidade">
+                             <span>Quantidade</span>
+                             <input type="number" id="item-quantidade" name="quantidade" min="1">
+                         </div>
+                         <div class="edit-container-acrescimo">
+                             <span>Acrescimo</span>
+                             <input type="number" id="item-acrescimo" name="acrescimo" min="0">
+                         </div>
+                        <div class="edit-container-desconto">
+                             <span>Desconto</span>
+                             <input type="number" id="item-desconto" name="desconto" min="0">
+                         </div>
+                    </div>
+                </div>
+                <div class="modal-edit-bottom">
+                     <button id="btn-modal-edit-bottom">
+                         Confirmar
+                         <img src="assets/icons/right-arrow.png" alt="" height="16" class="btn-modal-bottom-icon">
+                    </button>
+                    <button id="btn-modal-edit-dell">
+                         <img src="assets/icons/delete.png" alt="" height="16">
+                    </button>
+                </div>
+            </div>
+          </div>    
+
+          <ul class="menu-list">
+
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <section class="order">
+      <h2 class="content-title">Seu <span class="font-ligth">Pedido</span></h2>
+      <ul class="order-list"></ul>
+      <div class="order-bottom">
+        <div>
+            <div class="order-subitem">
+                <span class="order-sub">Sub Total</span><span id="order-subtotal">R$22,40</span>
+            </div>
+            <div class="order-subitem">
+                <span class="order-sub">Acrescimo</span><span id="order-acrescimo">R$0,00</span>
+            </div>
+            <div class="order-subitem">
+                <span class="order-sub">Desconto</span><span  id="order-desconto">R$0,00</span>
+            </div>
+        </div>
+        <div class="order-subvalorTotal">
+          <span class="order-total">Total</span><span id="order-totalvalor">R$23,52</span>  
+        </div>
+      </div>
+    </section>
+  </div>
+     <script type="module" src="script.js"></script>
+</body>
+
+</html>
